@@ -15,13 +15,13 @@ class App extends Component {
       height: ''
     }
 
-    handleChanges = (event) => {
+    this.handleChanges = (event) => {
       this.setState({
         [event.target.name] : event.target.value
       })
     }
 
-    addNewSmurf = () => {
+    this.addNewSmurf = () => {
       const newSmurf = {
         name: this.state.name,
         age: this.state.age,
