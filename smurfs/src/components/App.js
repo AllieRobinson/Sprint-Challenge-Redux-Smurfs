@@ -7,13 +7,45 @@ import './App.css';
  `How do I ensure that my component links the state to props?`
  */
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: '',
+      age: '',
+      height: ''
+    }
+
+    handleChanges = (event) => {
+      this.setState({
+        [event.target.name] : event.target.value
+      })
+    }
+
+    addNewSmurf = () => {
+      const newSmurf = {
+        name: this.state.name,
+        age: this.state.age,
+        height: this.state.height
+      }
+      this.props.addSmurf(newSmurf)
+      this.setState({
+        name: '',
+        age: '',
+        height: ''
+      })
+    }
+
+  }
   render() {
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your Redux version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+        <SmurfList /> 
+        <form onSubmit={this.addNewSmurf}>
+          <input placeholder="Name" name="name" value={this.state.name} onChange={this.handleChanges} />
+          <input placeholder="Age" name="age" value={this.state.age} onChange={this.handleChanges} />
+          <input placeholder="Height" name="height" value={this.state.height} onChange={this.handleChanges} />
+          <button>Submit New Smurf</button>
+        </form>
       </div>
     );
   }
