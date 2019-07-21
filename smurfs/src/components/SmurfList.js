@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import Smurf from './Smurf'
+import Smurf from './Smurf'
 
 const SmurfList = ( { Smurfs } ) => {
     return (
