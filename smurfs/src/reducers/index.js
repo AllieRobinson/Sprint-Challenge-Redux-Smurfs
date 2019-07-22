@@ -9,10 +9,8 @@ import { FETCHING_DATA, FETCH_SUCCESS, FETCH_FAIL, ADDING_SMURF, ADD_SMURF_SUCCE
  */
  const initialState = {
    smurfs: [],
-   fetchingSmurfs: false
-   addingSmurf: false
-   updatingSmurf: false
-   deletingSmurf: false
+   fetchingSmurfs: false,
+   addingSmurf: false,
    error: null
  }
 
@@ -24,7 +22,7 @@ import { FETCHING_DATA, FETCH_SUCCESS, FETCH_FAIL, ADDING_SMURF, ADD_SMURF_SUCCE
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
 
-const rootReducer = (state = initialState, action) => {
+export default function(state = initialState, action) => {
   switch(action.type) {
     case FETCHING_DATA:
     return {
@@ -62,5 +60,3 @@ const rootReducer = (state = initialState, action) => {
             return state;
   }
 }
-
-export default rootReducer;
