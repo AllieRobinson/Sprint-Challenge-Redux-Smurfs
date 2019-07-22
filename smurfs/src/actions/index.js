@@ -56,7 +56,7 @@ export const getSmurfs = () => dispatch => {
   .get('http://localhost:3333/smurfs')
   .then(response => {
     dispatch({
-      type: FETCH_SUCCESS
+      type: FETCH_SUCCESS,
       payload: response.data.results
     })
   })
