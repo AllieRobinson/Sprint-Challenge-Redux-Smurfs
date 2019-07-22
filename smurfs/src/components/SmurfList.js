@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Smurf from './Smurf'
 
-const SmurfList = ( { Smurfs } ) => {
+const SmurfList = ( smurfs ) => {
     return (
         <div>
             <h1>Smurfs:</h1>
             <ul>
-            {Smurfs.map((smurf) => {
+            {smurfs.map((smurf) => {
                 return <Smurf smurf={smurf} key={smurf.i} />
             })}
             </ul>
@@ -21,4 +21,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(SmurfList)
+export default connect(mapStateToProps, {smurfs})(SmurfList)

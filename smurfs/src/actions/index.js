@@ -34,7 +34,7 @@ export const addSmurf = (smurf) => dispatch => {
     age: '',
     height: ''
   })
-  .then(responmse => {
+  .then(response => {
     dispatch({
       type: ADD_SMURF_SUCCESS,
       payload: smurf

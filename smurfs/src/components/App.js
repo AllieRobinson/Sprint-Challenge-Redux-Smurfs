@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import { addSmurf } from '../actions';
 import SmurfList from './SmurfList'
@@ -53,4 +54,11 @@ class App extends Component {
   }
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    smurfs: state.smurfs
+  }
+}
+
+export default connect(mapStateToProps, { addSmurf })(App);

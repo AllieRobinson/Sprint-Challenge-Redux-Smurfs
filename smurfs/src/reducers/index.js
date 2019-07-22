@@ -22,12 +22,12 @@ import { FETCHING_DATA, FETCH_SUCCESS, FETCH_FAIL, ADDING_SMURF, ADD_SMURF_SUCCE
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
 
-export default function(state = initialState, action) => {
+export default function(state = initialState, action) {
   switch(action.type) {
     case FETCHING_DATA:
     return {
       ...state,
-      fetchingSmurfs: true;
+      fetchingSmurfs: true
     }
     case FETCH_SUCCESS:
     return {
@@ -38,7 +38,7 @@ export default function(state = initialState, action) => {
     case FETCH_FAIL:
       return {
         ...state,
-        error: err
+        error: true
       }
     case ADDING_SMURF: 
       return {
@@ -54,7 +54,7 @@ export default function(state = initialState, action) => {
         case ADD_SMURF_FAIL:
           return {
             ...state,
-            error: err
+            error: true
           }
           default:
             return state;
